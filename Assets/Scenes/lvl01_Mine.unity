@@ -1618,6 +1618,121 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 137744603138795940, guid: dc14bbd4ab18a104badc964e2d10ce38,
+        type: 2}
+      propertyPath: m_Quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 137744603138795940, guid: dc14bbd4ab18a104badc964e2d10ce38,
+        type: 2}
+      propertyPath: m_SkinnedMotionVectors
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1089226972299574, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:Hips
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566550864929106, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftUpLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113952185440934, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightUpLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: 1129224612906266, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:Spine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1379192273440688, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151801014746362, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftLeg
+      objectReference: {fileID: 0}
+    - target: {fileID: 1641574173428118, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:Spine1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942690415159912, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:Spine2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1162753294951754, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftShoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1263589462730662, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:Neck
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649990544176866, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightShoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783687440029308, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754016576866472, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightForeArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446396561300340, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349628316965394, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:Head
+      objectReference: {fileID: 0}
+    - target: {fileID: 1262905621060078, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:HeadTop_End
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686526490896478, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060315565994212, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightEye
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414892380680046, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650900002000868, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftForeArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735600370756152, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftHand
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560046525370332, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightFoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1234309031327316, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:RightToeBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461656612616086, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftFoot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483921501835800, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
+      propertyPath: m_Name
+      value: mixamorig:LeftToeBase
+      objectReference: {fileID: 0}
+    - target: {fileID: 95005446626061334, guid: dc14bbd4ab18a104badc964e2d10ce38,
+        type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc14bbd4ab18a104badc964e2d10ce38, type: 2}
   m_IsPrefabAsset: 0

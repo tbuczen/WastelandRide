@@ -45,11 +45,14 @@ namespace VehiclePackage
 
         private void Update()
         {
-            currentSpeed = rb.velocity.magnitude * 3.6f;
-            Debug.Log(currentSpeed);
+            if (!HasDriver())
+            {
+                return;
+            }
+            currentSpeed = rb.velocity.magnitude * 3.8f;
             pitch = currentSpeed / topSpeed;
- 
-            audioEngineRunning.pitch = pitch;
+            //TODO :: Dont base on pure velocity magnitude - take in count maxMotorTorque ? 
+            audioEngineRunning.pitch = 1 + pitch;
         }
 
         public void FixedUpdate()

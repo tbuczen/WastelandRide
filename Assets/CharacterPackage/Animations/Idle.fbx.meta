@@ -414,7 +414,7 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 0
   importAnimation: 1
-  copyAvatar: 1
+  copyAvatar: 0
   humanDescription:
     serializedVersion: 2
     human:
@@ -429,35 +429,35 @@ ModelImporter:
     - boneName: mixamorig:LeftUpLeg
       humanName: LeftUpperLeg
       limit:
-        min: {x: -60, y: -39.144394, z: -90}
-        max: {x: 60, y: 140.8556, z: 50}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: mixamorig:RightUpLeg
       humanName: RightUpperLeg
       limit:
-        min: {x: -60, y: -29.197863, z: -90}
-        max: {x: 60, y: 60, z: 50}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: mixamorig:LeftLeg
       humanName: LeftLowerLeg
       limit:
-        min: {x: -78.93048, y: 0, z: -61.71123}
-        max: {x: 69.304825, y: 0, z: 80}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: mixamorig:RightLeg
       humanName: RightLowerLeg
       limit:
-        min: {x: -79.411766, y: 0, z: -59.786095}
-        max: {x: 74.59893, y: 0, z: 80.00001}
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
         value: {x: 0, y: 0, z: 0}
         length: 0
-        modified: 1
+        modified: 0
     - boneName: mixamorig:LeftFoot
       humanName: LeftFoot
       limit:
@@ -851,13 +851,13 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: player@IdleAnimation(Clone)
+    - name: Idle(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: player@IdleAnimation(Clone)
+      parentName: Idle(Clone)
       position: {x: -0.0026166814, y: 0.98996234, z: -0.0012636051}
       rotation: {x: -0.031305656, y: 0.04653604, z: 0.029066358, w: 0.99800277}
       scale: {x: 1, y: 1, z: 1}
@@ -979,7 +979,7 @@ ModelImporter:
     - name: mixamorig:LeftHandMiddle3
       parentName: mixamorig:LeftHandMiddle2
       position: {x: -0.034598, y: 0, z: 0}
-      rotation: {x: 0.00000007086612, y: -0.0036155004, z: 0.035300903, w: 0.9993702}
+      rotation: {x: 0.000000070866115, y: -0.0036155002, z: 0.0353009, w: 0.99937016}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:LeftHandMiddle4
       parentName: mixamorig:LeftHandMiddle3
@@ -1104,7 +1104,7 @@ ModelImporter:
     - name: mixamorig:RightHandIndex3
       parentName: mixamorig:RightHandIndex2
       position: {x: 0.034151997, y: 0, z: 0}
-      rotation: {x: 0.00000013169317, y: 0.0032541254, z: -0.039966587, w: 0.99919575}
+      rotation: {x: 0.00000013169317, y: 0.0032541251, z: -0.039966587, w: 0.9991957}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:RightHandIndex4
       parentName: mixamorig:RightHandIndex3
@@ -1119,12 +1119,12 @@ ModelImporter:
     - name: mixamorig:RightHandMiddle2
       parentName: mixamorig:RightHandMiddle1
       position: {x: 0.03614, y: 0, z: 0}
-      rotation: {x: 0.000000036554376, y: 0.002917109, z: -0.035817582, w: 0.9993541}
+      rotation: {x: 0.000000036554372, y: 0.0029171088, z: -0.03581758, w: 0.99935406}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:RightHandMiddle3
       parentName: mixamorig:RightHandMiddle2
       position: {x: 0.034598, y: 0, z: 0}
-      rotation: {x: -0.00000007708146, y: 0.0028782915, z: -0.03537026, w: 0.99937016}
+      rotation: {x: -0.00000007708145, y: 0.0028782913, z: -0.035370257, w: 0.9993701}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:RightHandMiddle4
       parentName: mixamorig:RightHandMiddle3
@@ -1191,10 +1191,10 @@ ModelImporter:
       position: {x: 0.026794, y: -0.015469, z: 0.015469}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    armTwist: 0.5
+    armTwist: 0.487
     foreArmTwist: 0.5
     upperLegTwist: 0.5
-    legTwist: 0.5
+    legTwist: 0.522
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
