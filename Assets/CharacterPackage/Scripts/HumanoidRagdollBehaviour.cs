@@ -52,7 +52,7 @@ namespace CharacterPackage.Scripts
 
 			var force = colRigidbody.velocity.magnitude;
 			Vector3 dir = collision.contacts[0].point;
-			GetComponent<Rigidbody>().AddForce(dir.normalized*force);
+			rb.AddForce(dir.normalized*force);
 			DoRagdoll(true);
 		}
 	}
