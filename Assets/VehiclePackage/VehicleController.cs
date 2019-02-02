@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -46,7 +47,7 @@ namespace VehiclePackage
         
     }
 
-    [RequireComponent(typeof(Rigidbody))]
+//    [RequireComponent(typeof(Rigidbody))]
     public class VehicleController : MonoBehaviour
     {
         protected AudioSource audioSrc;
@@ -63,6 +64,8 @@ namespace VehiclePackage
         public float topSpeed = 100; // km per hour
         protected float currentSpeed = 0;
         protected float pitch = 0;
+
+        protected bool isIgnited;
         
         protected AudioSource audioEngineStart;
         protected AudioSource audioEngineRunning;
@@ -150,6 +153,15 @@ namespace VehiclePackage
         {
             audioEngineStart.Play();
             audioEngineRunning.PlayDelayed(2.366f);
+            StartCoroutine( SetIsIgnited(2.366f) );
+
+
+        }
+
+        private IEnumerator SetIsIgnited(float wait)
+        {
+            yield return new WaitForSeconds(wait);
+            isIgnited = true;
         }
 
         private void TurnOffEngine()

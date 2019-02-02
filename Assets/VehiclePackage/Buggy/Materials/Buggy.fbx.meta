@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d29f9a5b36d90684fac497a009278882
+guid: 4eb7048e3b3eac94ab5c4a8f094b9553
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -22,7 +22,17 @@ ModelImporter:
     4300000: SteeringWheel
     4300002: Rifle
     4300004: Body
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body_Material
+    second: {fileID: 2100000, guid: 5c3a731155d13eb42b189f5ec606db6c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rifle_Material
+    second: {fileID: 2100000, guid: 806aea1076ffd354985fb1d439ffd312, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

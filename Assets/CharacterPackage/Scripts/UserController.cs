@@ -9,6 +9,8 @@ namespace CharacterPackage.Scripts
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(HandsIKHandler))]
     [RequireComponent(typeof(FeetIKHandler))]
+//    Main Collider
+    [RequireComponent(typeof(CapsuleCollider))]
     public class UserController : MonoBehaviour {
         [SerializeField] private float runMultiplierSpeed = 2.1f;
 
@@ -25,11 +27,12 @@ namespace CharacterPackage.Scripts
         [CanBeNull] private VehicleController vehicleController;
         private bool inVehicle;
         private Seat assignedSeat;
-        //Components
+        //Animation & IK
         private static Animator anim;
         private Rigidbody rb;
         private HandsIKHandler handsIK;
         private FeetIKHandler feetIK;
+        private CapsuleCollider capsuleCollider;
         //Running
         private bool isRunningToggled;
         private bool isFocused = false;
@@ -57,6 +60,7 @@ namespace CharacterPackage.Scripts
             anim = GetComponent<Animator>();
             handsIK = GetComponent<HandsIKHandler>();
             feetIK = GetComponent<FeetIKHandler>();
+            capsuleCollider = GetComponent<CapsuleCollider>();
         }
 	
         // Update is called once per frame
@@ -74,7 +78,7 @@ namespace CharacterPackage.Scripts
             else
             {
                 handsIK.enabled = false;
-                feetIK.enabled = true;
+//                feetIK.enabled = true;
                 UpdateMovement();
                 UpdateRotation();
             }
@@ -251,6 +255,7 @@ namespace CharacterPackage.Scripts
             }
             else
             {
+                capsuleCollider.enabled = false;
                 inVehicle = true;
                 anim.SetBool(IsWalking,false);
                 anim.SetBool(IsRunning,false);
@@ -262,6 +267,7 @@ namespace CharacterPackage.Scripts
         {
             if (!vehicleController) return;
             vehicleController.RemovePlayer(gameObject);
+            capsuleCollider.enabled = true;
             inVehicle = false;
             anim.SetBool(IsWalking, false);
             anim.SetBool(IsRunning, false);
@@ -275,7 +281,6 @@ namespace CharacterPackage.Scripts
         {
             return Input.GetAxis("Vertical") * baseSpeed * Time.deltaTime;
         }
-
 
     }
 }

@@ -13,14 +13,14 @@ namespace VehiclePackage
 
     public class CarController : VehicleController {
         public List<AxleInfo> axleInfos; 
-        private Rigidbody rb; 
+        public Rigidbody rb; 
         
         //center of mass
         public void Awake()
         {
             if(centerOfMass == null)
                 return;
-            rb = GetComponent<Rigidbody>();
+            
             rb.centerOfMass = centerOfMass.localPosition;
 
         }
@@ -69,6 +69,7 @@ namespace VehiclePackage
             rotation = Quaternion.Euler( rotation.eulerAngles.x, rotation.eulerAngles.y , steering );
             steeringWheel.transform.rotation = rotation;
 
+            if (!isIgnited) return;
             foreach (var axleInfo in axleInfos) {
                 if (axleInfo.steering) {
                     axleInfo.leftWheel.steerAngle = steering;
