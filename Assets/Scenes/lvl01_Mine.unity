@@ -1831,6 +1831,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1931677498305404, guid: d332568485bec7047b1d15f6a2584df8, type: 2}
+      propertyPath: m_Name
+      value: NPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 54878515161120042, guid: d332568485bec7047b1d15f6a2584df8,
+        type: 2}
+      propertyPath: m_Mass
+      value: 80
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d332568485bec7047b1d15f6a2584df8, type: 2}
   m_IsPrefabAsset: 0
