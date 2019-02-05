@@ -210,7 +210,7 @@ namespace CharacterPackage.Scripts
             var seatPos = assignedSeat.placePosition.position;
             var seatRot = assignedSeat.placePosition.rotation;
             var playerTransform = transform;
-            playerTransform.position = new Vector3(seatPos.x, seatPos.y - 0.8f, seatPos.z);
+            playerTransform.position = new Vector3(seatPos.x, seatPos.y, seatPos.z);
             playerTransform.rotation = seatRot;
             
         }
@@ -255,11 +255,11 @@ namespace CharacterPackage.Scripts
             }
             else
             {
+                anim.SetBool(InCar,true);
                 capsuleCollider.enabled = false;
                 inVehicle = true;
                 anim.SetBool(IsWalking,false);
                 anim.SetBool(IsRunning,false);
-                anim.SetBool(InCar,true);
             }
         }
         

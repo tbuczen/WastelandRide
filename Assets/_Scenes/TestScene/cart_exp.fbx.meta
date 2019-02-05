@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: 35ca3a674a3374f428daf816714de875
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: back
+    100002: backleft
+    100004: backright
+    100006: blobtest
+    100008: //RootNode
+    100010: center
+    100012: chair
+    100014: chairmetall
+    100016: chasis_l
+    100018: engine
+    100020: front
+    100022: frontleft
+    100024: frontright
+    100026: left
+    100028: Polygonobj
+    100030: right
+    100032: steerWheel
+    100034: tire_fl
+    400000: back
+    400002: backleft
+    400004: backright
+    400006: blobtest
+    400008: //RootNode
+    400010: center
+    400012: chair
+    400014: chairmetall
+    400016: chasis_l
+    400018: engine
+    400020: front
+    400022: frontleft
+    400024: frontright
+    400026: left
+    400028: Polygonobj
+    400030: right
+    400032: steerWheel
+    400034: tire_fl
+    2300000: blobtest
+    2300002: chair
+    2300004: chairmetall
+    2300006: engine
+    2300008: Polygonobj
+    2300010: steerWheel
+    2300012: tire_fl
+    3300000: blobtest
+    3300002: chair
+    3300004: chairmetall
+    3300006: engine
+    3300008: Polygonobj
+    3300010: steerWheel
+    3300012: tire_fl
+    4300000: Cylinder
+    4300002: tire.3
+    4300004: Box
+    4300006: cartBase
+    4300008: chasis_front_r
+    4300010: chasis_l
+    4300012: chair
+    4300014: chairmetall
+    4300016: steerWheel
+    4300018: blobtest
+    4300020: engine
+    4300022: tire_fl
+    4300024: Polygonobj
+    11100000: //RootNode
+    13700000: chasis_l
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blobtestMat
+    second: {fileID: 2100000, guid: fb601aa1811094788b1317c46b54ad42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chairMat
+    second: {fileID: 2100000, guid: 591b3ebcaff4a41b8b11ef895554e06b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chairmetallMat
+    second: {fileID: 2100000, guid: bb06580c0752d4fb78c92af23d736edf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chasis_lMat
+    second: {fileID: 2100000, guid: d8c45b9fd7d2a4282accd228bba6a3f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: engineMat
+    second: {fileID: 2100000, guid: 412da1f7c6ea0451796371313eadd8ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: steerWheelMat
+    second: {fileID: 2100000, guid: 10f5339744adf47389da1c1669d5851c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire_flMat
+    second: {fileID: 2100000, guid: 7789bbc8609214efd99ddbce7b4f228a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 1
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

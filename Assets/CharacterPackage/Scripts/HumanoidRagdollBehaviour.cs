@@ -1,30 +1,46 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CharacterPackage.Scripts
 {
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(Animator))]
-	[RequireComponent(typeof(Collider))]
+	[RequireComponent(typeof(CapsuleCollider))]
 	public class HumanoidRagdollBehaviour : MonoBehaviour {
 		private Collider mainCollider;
 		private Collider[] allColliders;
+		private Rigidbody[] bodies;
 		private Animator anim;
 		private Rigidbody rb;
+		public float forceMultiplier = 10;
+		public Rigidbody ragdollRigidbody;
+		private bool ragdoll;
+		private Vector3 hitForce;
+
+		
 
 		private void Awake()
 		{
+			ragdoll = false;
 			mainCollider = GetComponent<Collider>();
 			allColliders = GetComponentsInChildren<Collider>(true);
+			bodies = GetComponentsInChildren<Rigidbody>(true);
 			anim = GetComponent<Animator>();
 			rb = GetComponent<Rigidbody>();
 			DoRagdoll(false);
+			if (ragdollRigidbody == null)
+			{
+				ragdollRigidbody = anim.GetBoneTransform(HumanBodyBones.Hips).GetComponent<Rigidbody>();
+			}
+		}
+
+		public Rigidbody GetRb()
+		{
+			return rb;
 		}
 
 		public void DoRagdoll(bool isRagdoll)
 		{
-			if(isRagdoll)
-			Debug.Log("doing ragdoll");
-
 			foreach (var col in allColliders)
 			{
 				col.enabled = isRagdoll;
@@ -36,24 +52,41 @@ namespace CharacterPackage.Scripts
 			anim.enabled = !isRagdoll;
 		}
 
-		void OnCollisionEnter (Collision collision) {
-			// are is the collider heading in the direction of the person 0.5 is arbitrary, it may require more or less
+		private void OnCollisionEnter (Collision collision) {
+			TriggerVehicleHit(collision);
+		}
 
+
+		private void TriggerVehicleHit(Collision collision)
+		{
 			var col = collision.collider;
-			if (!col.CompareTag("Vehicle"))
-			{
-				return;
-			}
+			if (!col.CompareTag("Vehicle")) return;
 			
 			var colRigidbody = col.GetComponent<Rigidbody>();
-			Debug.Log(Vector3.Dot(colRigidbody.velocity, transform.position));
-			
-			if (Vector3.Dot(colRigidbody.velocity, transform.position) < 1000) return;
-
 			var force = colRigidbody.velocity.magnitude;
-			Vector3 dir = collision.contacts[0].point;
-			rb.AddForce(dir.normalized*force);
-			DoRagdoll(true);
+
+			if (Math.Abs(force) < 5) return;
+			ContactPoint contact = collision.contacts[0];
+			
+			var vehiclePos = col.transform.position;
+			var collisionPos = contact.point;
+			
+			Vector3 normalizedVehiclePos = new Vector3(vehiclePos.x,collisionPos.y,vehiclePos.z);
+			var hitDirection =  (collisionPos - normalizedVehiclePos).normalized;
+			hitForce = hitDirection*force*forceMultiplier;
+			hitForce.y = 0.5f;
+			ragdoll = true;
+		}
+
+		private void FixedUpdate()
+		{
+			//prevent falling through floor
+			if (ragdoll)
+			{
+				ragdollRigidbody.AddForce(hitForce, ForceMode.Impulse);
+				DoRagdoll(true);
+				ragdoll = false;
+			}
 		}
 	}
 }

@@ -66,19 +66,21 @@ namespace VehiclePackage
             float steering = maxSteeringAngle * Input.GetAxis("Horizontal");
 
             var rotation = steeringWheel.transform.rotation;
-            rotation = Quaternion.Euler( rotation.eulerAngles.x, rotation.eulerAngles.y , steering );
-            steeringWheel.transform.rotation = rotation;
+            steeringWheel.transform.rotation =  Quaternion.Euler( rotation.eulerAngles.x, rotation.eulerAngles.y , -steering );;
 
-            if (!isIgnited) return;
+            
             foreach (var axleInfo in axleInfos) {
                 if (axleInfo.steering) {
                     axleInfo.leftWheel.steerAngle = steering;
                     axleInfo.rightWheel.steerAngle = steering;
                 }
-                if (axleInfo.motor) {
+
+                if (isIgnited && axleInfo.motor)
+                {
                     axleInfo.leftWheel.motorTorque = motor;
                     axleInfo.rightWheel.motorTorque = motor;
                 }
+
                 ApplyLocalPositionToVisuals(axleInfo.leftWheel);
                 ApplyLocalPositionToVisuals(axleInfo.rightWheel);
             }
