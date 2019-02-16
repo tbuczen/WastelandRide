@@ -90,7 +90,9 @@ namespace CharacterPackage.Scripts
 				ragdollRigidbody.velocity = Vector3.zero;
 				DoRagdoll(true);
 				ragdollRigidbody.velocity = Vector3.zero;
-				ragdollRigidbody.AddForce(hitForce, ForceMode.Force);
+				//log
+				Debug.Log("NPC was hit");
+				ragdollRigidbody.AddForce(hitForce, ForceMode.Impulse);
 				ragdoll = false;
 			}
 		}

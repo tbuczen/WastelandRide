@@ -37,11 +37,11 @@ namespace VehiclePackage
 			colRelVel.y *= yForceDamp;
 			Vector3 colPointToMe = transform.position - collision.contacts[0].point;
 	
-			Debug.Log("Hit");
+//			Debug.Log("Hit");
 			// Dot = angle to collision point, frontal = highest damage, strip = lowest damage
 			float colStrength = colRelVel.magnitude * Vector3.Dot(collision.contacts[0].normal, colPointToMe.normalized);
 	
-			Debug.Log("Hit Strength:" + colStrength);
+//			Debug.Log("Hit Strength:" + colStrength);
 			
 			OnMeshForce( collision.contacts[0].point, Mathf.Clamp01(colStrength/maxCollisionStrength) );
 		}
