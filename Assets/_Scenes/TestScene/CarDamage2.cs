@@ -16,8 +16,7 @@ public class CarDamage2 : MonoBehaviour
 	public void Start()
 	{
         //maxMoveDelta = Mathf.Clamp01(maxMoveDelta);
-       
-        
+
         if(optionalMeshList.Length>0)
         	meshfilters = optionalMeshList;
         else
@@ -25,15 +24,6 @@ public class CarDamage2 : MonoBehaviour
         	
         sqrDemRange = demolutionRange*demolutionRange;
         	
-        /* doesnt work, strange physic behaviour
-        for(int j=0; j<meshfilters.Length; ++j)
-        {
-       		if(!meshfilters[j].transform.collider)
-       	 	{
-        		meshfilters[j].gameObject.AddComponent<BoxCollider>();		
-        		meshfilters[j].transform.collider.isTrigger = true;	
-        	}
-        }*/
 	}
 	
 	public void OnCollisionEnter( Collision collision ) 
@@ -74,20 +64,13 @@ public class CarDamage2 : MonoBehaviour
                 Vector3 flatVertToCenterDir = transform.position - vertWorldPos;
                 flatVertToCenterDir.y = 0.0f;
                    
-                // 0.5 - 1 => 45° to 0°  / current vertice is nearer to exploPos than center of bounds
+                // 0.5 - 1 => 45Â° to 0Â°  / current vertice is nearer to exploPos than center of bounds
                 if( originToMeDir.sqrMagnitude < sqrDemRange ) //dot > 0.8f )
                 {
                 	float dist = Mathf.Clamp01(originToMeDir.sqrMagnitude/sqrDemRange);
                     float moveDelta = force * (1.0f-dist) * maxMoveDelta;
-
 					Vector3 moveDir = Vector3.Slerp(originToMeDir, flatVertToCenterDir, impactDirManipulator).normalized * moveDelta;
-
                     verts[i] += Quaternion.Inverse(transform.rotation)*moveDir;
-
-		
-                    //Debug.DrawRay(vertWorldPos, moveDir, Color.red);
-                    //Debug.DrawLine(vertWorldPos, transform.position, Color.green);
-                    ///Debug.Break();
                 }
 
         	}

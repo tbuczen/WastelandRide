@@ -13,17 +13,7 @@ namespace VehiclePackage
 
     public class CarController : VehicleController {
         public List<AxleInfo> axleInfos; 
-        public Rigidbody rb; 
         
-        //center of mass
-        public void Awake()
-        {
-            if(centerOfMass == null)
-                return;
-            
-            rb.centerOfMass = centerOfMass.localPosition;
-
-        }
         // finds the corresponding visual wheel
         // correctly applies the transform
         private static void ApplyLocalPositionToVisuals(WheelCollider wheelCollider)

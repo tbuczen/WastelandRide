@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using VehiclePackage;
 
 namespace CharacterPackage.Scripts
 {
@@ -12,7 +13,7 @@ namespace CharacterPackage.Scripts
 		private Rigidbody[] bodies;
 		private Animator anim;
 		private Rigidbody rb;
-		public float forceMultiplier = 10;
+		public float forceMultiplier = 0.4f;
 		public Rigidbody ragdollRigidbody;
 		private bool ragdoll;
 		private Vector3 hitForce;
@@ -65,7 +66,7 @@ namespace CharacterPackage.Scripts
 			var colRigidbody = col.GetComponent<Rigidbody>();
 			var force = colRigidbody.velocity.magnitude;
 
-			if (Math.Abs(force) < 5) return;
+			if (Math.Abs(force) < 6) return;
 			ContactPoint contact = collision.contacts[0];
 			
 			var vehiclePos = col.transform.position;
@@ -74,7 +75,9 @@ namespace CharacterPackage.Scripts
 			Vector3 normalizedVehiclePos = new Vector3(vehiclePos.x,collisionPos.y,vehiclePos.z);
 			var hitDirection =  (collisionPos - normalizedVehiclePos).normalized;
 			hitForce = hitDirection*force*forceMultiplier;
-			hitForce.y = 0.5f;
+			
+			Debug.Log(hitForce);
+			hitForce.y = 0.1f;
 			ragdoll = true;
 		}
 
@@ -83,8 +86,11 @@ namespace CharacterPackage.Scripts
 			//prevent falling through floor
 			if (ragdoll)
 			{
-				ragdollRigidbody.AddForce(hitForce, ForceMode.Impulse);
+				//TODO:: WHY THE FORCE IS THE SAME
+				ragdollRigidbody.velocity = Vector3.zero;
 				DoRagdoll(true);
+				ragdollRigidbody.velocity = Vector3.zero;
+				ragdollRigidbody.AddForce(hitForce, ForceMode.Force);
 				ragdoll = false;
 			}
 		}

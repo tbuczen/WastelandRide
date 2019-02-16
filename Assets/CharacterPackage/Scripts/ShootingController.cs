@@ -21,14 +21,12 @@ namespace CharacterPackage.Scripts
 				var hits = Physics.RaycastAll(ray);
 				foreach (var hit in hits)
 				{
+					if (hit.collider.CompareTag("Player")) continue;
 					var targetRagdoll = hit.collider.GetComponent<HumanoidRagdollBehaviour>();
-					if (targetRagdoll != null)
-					{
-					
-						var targetRb = targetRagdoll.GetRb();
-						targetRb.AddForce(ray.direction*5/10);
-						targetRagdoll.DoRagdoll(true);
-					}
+					if (targetRagdoll == null) continue;
+					var targetRb = targetRagdoll.GetRb();
+					targetRb.AddForce(ray.direction * 5 / 10);
+					targetRagdoll.DoRagdoll(true);
 				}
 			}
 		}

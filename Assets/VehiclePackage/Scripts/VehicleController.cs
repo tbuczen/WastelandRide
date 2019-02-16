@@ -71,6 +71,18 @@ namespace VehiclePackage
         protected AudioSource audioEngineRunning;
         protected AudioSource audioEngineEnd;
         
+        public Rigidbody rb; 
+        public Collider collider; 
+        
+        public void Awake()
+        {
+            if(centerOfMass == null)
+                return;
+            
+            rb.centerOfMass = centerOfMass.localPosition;
+
+        }
+        
         public void Start(){
             // add the necessary AudioSources:
             audioEngineStart = AddAudio(sounds.engineStart, false, false, 0.2f);
